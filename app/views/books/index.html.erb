@@ -1,15 +1,44 @@
-<h1>New Book</h1>
+<h1>Books</h1>
 <p>本の感想一覧を表示するページ</p>
 
-  <%= form_with model: @book do |f| %>
+<p>★画面左側上部には統一して「User info」を配置する</p>
 
-    <!--本のタイトルを入力するフォーム-->
+  <h1>User info</h1>
+    <%= image_tag current_user.get_profile_image(100,100) %>
+  <h4>name</h4><%= current_user.name %>
+  <h4>introduction</h4><%= current_user.introduction %>
+  <%= link_to "Edit", edit_user_path(current_user.id)%>
+
+<p>★画面左側下部には統一して「New book」を配置する</p>
+
+  <h1>New book</h1>
+  <%= form_with model: @book do |f| %>
     <h4>Title</h4>
       <%= f.text_field :title %>
-
-    <!--本の感想を入力するフォーム-->
     <h4>Opinion</h4>
-      <%= f.text_area :option %>
-
-    <%= f.submit '投稿' %>
+      <%= f.text_area :body %>
+    <%= f.submit 'Create Book' %>
   <% end %>
+
+<p>★画面右側に「Books」（投稿された本の一覧）を配置する</p>
+<h1>Books</h1>
+    <table style="border:none;">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <% @books.each do |book| %>
+      <tr>
+        <td><%= image_tag book.user.get_profile_image(80,80) %></td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
