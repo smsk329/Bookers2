@@ -1,18 +1,6 @@
 <!-- ユーザー情報 -->
 
 <div>
-  <h2>User info</h2>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-</div>
+  <h2>Books</h2>
+  <P>自分が投稿した本の感想一覧を表示するページ</P>
 
-<!-- ユーザーの投稿一覧 -->
-
-<% @book.each do |post_image| %>
-<div>
-  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p>ショップ名：<%= book.title %></p>
-  <p>説明：<%= book.option %></p>
-  <p>ユーザーネーム：<%= book.user.name %></p>
-</div>
-<% end %>

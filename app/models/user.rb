@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+        # UserモデルとBookモデルが、１：Ｎになるようにアソシエーションを記述。
+         has_many :books, dependent: :destroy
 
         # ActiveStorageを使ってプロフィール画像をアップロードできるようにする。
          has_one_attached :profile_image
