@@ -1,2 +1,22 @@
+
+<p>★画面右側に「Users」（このサイトに登録しているユーザーの一覧）を配置する</p>
 <h1>Users</h1>
-<p>登録しているユーザー一覧を表示する</p>
+    <table style="border="1" rules="rows">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag user.get_profile_image(80,80) %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "Show", user_path(user.id)%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

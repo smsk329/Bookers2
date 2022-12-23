@@ -5,10 +5,22 @@
 
   <h1>User info</h1>
     <%= image_tag current_user.get_profile_image(100,100) %>
-  <h4>name</h4><%= current_user.name %>
-  <h4>introduction</h4><%= current_user.introduction %>
-  <%= link_to "Edit", edit_user_path(current_user.id)%>
+    <table style="border="1" rules="rows">
+      <tbody>
+        <tr>
+          <th>name</th>
+          <th><%= current_user.name %></th>
+        </tr>
 
+        <tr>
+          <th>introduction</th>
+          <th><%= current_user.introduction %></th>
+        </tr>
+      </tbody>
+    </table>
+
+  <%= link_to "Edit", edit_user_path(current_user.id)%>
+  <br>
 <p>★画面左側下部には統一して「New book」を配置する</p>
 
   <h1>New book</h1>
@@ -22,7 +34,7 @@
 
 <p>★画面右側に「Books」（投稿された本の一覧）を配置する</p>
 <h1>Books</h1>
-    <table style="border:none;">
+    <table style="border="1" rules="rows">
     <thead>
     <tr>
       <th></th>
@@ -35,10 +47,9 @@
         <% @books.each do |book| %>
       <tr>
         <td><%= image_tag book.user.get_profile_image(80,80) %></td>
-        <td><%= book.title %></td>
+        <td><%= link_to book.title, book_path(book.id) %></td>
         <td><%= book.body %></td>
       </tr>
       <% end %>
     </tbody>
-
   </table>

@@ -1,6 +1,22 @@
-<!-- ユーザー情報 -->
+<h2>Books</h2>
+<P>特定のユーザーが投稿した本の感想一覧を表示するページ</P>
+<table style="border="1" rules="rows">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+    </thead>
 
-<div>
-  <h2>Books</h2>
-  <P>自分が投稿した本の感想一覧を表示するページ</P>
+    <tbody>
+        <% @book.each do |book| %>
+      <tr>
+        <td><%= image_tag book.user.get_profile_image(80,80) %></td>
+        <td><%= link_to book.title, book_path(book.id) %></td>
+        <td><%= book.body %></td>
+      </tr>
+      <% end %>
+    </tbody>
 
+  </table>
