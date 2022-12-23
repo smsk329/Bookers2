@@ -32,8 +32,8 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-    @book.destroy(book_params)
-    redirect_to book_path(@book.id)
+    @book.destroy
+    redirect_to books_path
   end
 
   # ストロングパラメータ

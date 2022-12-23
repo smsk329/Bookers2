@@ -6,17 +6,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header class="header">
+    <header>
+      <div class="header-list">
       <!--Bookersのロゴ：トップに戻るルートパスを設定-->
-        <li>
+        <span>
           <%= link_to "Bookers", root_path %>
-        </li>
+        </span>
 
+      <nav>
+      <ul>
       <% if user_signed_in? %>
       <!--Homeボタン：ログインしている→マイページ。-->
         <li>
@@ -52,7 +55,12 @@
         <li>
           <%= link_to "Log in", new_user_session_path %>
         </li>
+        </ul>
+        </nav>
+      </div>
+
       <% end %>
+    <p class="text-white"><%= current_user.name %></p>
     </header>
      <%= yield %>
       <footer class"footer">

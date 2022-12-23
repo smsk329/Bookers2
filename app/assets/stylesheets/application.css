@@ -23,5 +23,33 @@
 
 header {
   width: 100%;
+  padding: 10px;
+  background-color: #343a40;
+}
+
+.header-list {
+  display: flex;
+}
+
+nav {
+  
+}
+
+ul {
+  text-align: right;
+}
+
+li {
+  display: inline;
+  text-decoration: none;
+  list-style: none;
+  padding: 8px;
+}
+
+a{
+  color: #ffffff;
+}
+
+footer {
   margin: 20px;
 }

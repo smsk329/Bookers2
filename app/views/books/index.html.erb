@@ -1,36 +1,4 @@
-<h1>Books</h1>
-<p>本の感想一覧を表示するページ</p>
-
-<p>★画面左側上部には統一して「User info」を配置する</p>
-
-  <h1>User info</h1>
-    <%= image_tag current_user.get_profile_image(100,100) %>
-    <table style="border="1" rules="rows">
-      <tbody>
-        <tr>
-          <th>name</th>
-          <th><%= current_user.name %></th>
-        </tr>
-
-        <tr>
-          <th>introduction</th>
-          <th><%= current_user.introduction %></th>
-        </tr>
-      </tbody>
-    </table>
-
-  <%= link_to "Edit", edit_user_path(current_user.id)%>
-  <br>
-<p>★画面左側下部には統一して「New book」を配置する</p>
-
-  <h1>New book</h1>
-  <%= form_with model: @book do |f| %>
-    <h4>Title</h4>
-      <%= f.text_field :title %>
-    <h4>Opinion</h4>
-      <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-  <% end %>
+<%= render 'list', book: @book %>
 
 <p>★画面右側に「Books」（投稿された本の一覧）を配置する</p>
 <h1>Books</h1>
@@ -39,7 +7,7 @@
     <tr>
       <th></th>
       <th>Title</th>
-      <th>Body</th>
+      <th>Opinion</th>
     </tr>
     </thead>
 
