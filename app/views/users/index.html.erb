@@ -1,6 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"">
+
 <%= render 'books/list.html.erb', book: @book %>
 
-<p>★画面右側に「Users」（このサイトに登録しているユーザーの一覧）を配置する</p>
+</div>
+
+<div class="col-md-8 offset-md-1">
+
 <h1>Users</h1>
     <table style="border="1" rules="rows">
     <thead>
@@ -21,3 +28,7 @@
       <% end %>
     </tbody>
   </table>
+  </div>
+
+  </div>
+</div>

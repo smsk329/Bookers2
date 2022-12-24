@@ -1,7 +1,18 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
 <%= render 'books/list.html.erb', book: @book %>
 
+</div>
+
+<div class="col-md-8 offset-md-1">
+
 <h2>Books</h2>
-<P>特定のユーザーが投稿した本の感想一覧を表示するページ</P>
 <table style="border="1" rules="rows">
     <thead>
     <tr>
@@ -22,3 +33,6 @@
     </tbody>
 
   </table>
+
+  </div>
+</div>
