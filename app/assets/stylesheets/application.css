@@ -13,26 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
-
-/** {*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  box-sizing: border-box;*/
-/*}*/
-
-/*header {*/
-/*  width: 100%;*/
-/*  padding: 10px;*/
-/*  background-color: #343a40;*/
-/*}*/
-
-
-/*li {*/
-/*  display: inline;*/
-/*  text-decoration: none;*/
-/*  list-style: none;*/
-/*  padding: 8px;*/
-/*  color: #ffffff;*/
-/*}*/
