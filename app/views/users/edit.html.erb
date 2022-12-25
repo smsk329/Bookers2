@@ -1,3 +1,5 @@
+<!--ユーザーの編集フォームのバリデーションに対するエラーメッセージ-->
+
 <% if @user.errors.any? %>
 <%= @user.errors.count %>errors prohibited this obj from being saved:
   <ul>
@@ -7,20 +9,31 @@
   </ul>
 <% end %>
 
-<h1>User info</h1>
-<p>自分のプロフィールを編集するページ</p>
-
-<%= form_with model: @user do |f| %>
-
-  <h4>Name</h4>
-  <%= f.text_field :name %>
-
-  <h4>Image</h4>
-  <%= f.file_field :profile_image, accept: "image/*" %>
-
-  <h4>Introduction</h4>
-  <%= f.text_area :introduction %>
-
-  <%= f.submit 'Update User' %>
-
-<% end %>
+<div class="container">
+  <div class="row p-3">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      
+    <h1>User info</h1>
+    
+    <%= form_with model: @user do |f| %>
+      <div class="form-group">
+      <h4>Name</h4>
+      <%= f.text_field :name %>
+      </div>
+      <div class="form-group">
+      <h4>Image</h4>
+      <%= f.file_field :profile_image, accept: "image/*" %>
+      </div>
+      <div class="form-group">
+      <h4>Introduction</h4>
+      <%= f.text_area :introduction %>
+      </div>
+      <div class="form-group">
+      <%= f.submit 'Update User', class:'btn btn-sm btn-secondary' %>
+      </div>
+    
+    <% end %>
+    
+    </div>
+  </div>
+</div>
